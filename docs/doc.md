@@ -11,7 +11,7 @@
 
 [Console](#console)
 
-## Instailing Dython
+## Instaling Dython
 1. Download Dython, and extract it. ([ZIP](https://github.com/Sombrero64/Dython/zipball/master)/[TAR](https://github.com/Sombrero64/Dython/tarball/master))
 2. Take the Dython's script, **Dython.py**, and insert in your project's folder.
 3. Edit scripts that requires Dython's functions, and add an `import` command.
@@ -20,33 +20,18 @@
 from Dython import *
 ```
 
-## Oprations
-The oprations (`math`) class contains functions regrading oprating values and objects. There are currently 8 functions under this class.
-
-- `expon()`: returns the expontent of a number (first argument) to the secound argument.
-
-  ```py
-  print(math.expon(4, 2))
-  print(math.expon(4, 3))
-  ```
-  ```
-  16.0
-  64.0
-  ```
+## Operations
+The operations (`math`) class contains functions regrading oprating values and objects. There are currently 5 functions under this class.
   
-- `itemsAdd()`, `itemsSub()`, `itemsMulti()`, & `itemsDivd()`: returns the sum, difference, product, or quotient of all items in a list (argument).
+- `itemsAdd()`&`itemsMulti()`: returns the sum or product of all items in a list (argument).
 
   ```py
   print(math.itemsAdd([1, 2, 3]))
-  print(math.itemsSub([5, 3, 0.5]))
   print(math.itemsMulti([5, 5, 4]))
-  print(math.itemsDivd([100, 4]))
   ```
   ```
   6.0
-  1.5
   100.0
-  25.0
   ```
   
 - `joinStrs()`: returns a joined string of all items in a list (argument).
@@ -59,7 +44,7 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   Hello, Davis!
   ```
   
-- `itemCount()`: returns the amount of items in a list (first argument) that matches the secound argument.
+- `itemCount()`: returns the amount of items in a list (first argument) that matches the secound argument.(Can be replaced by list.count)
 
   ```py
   print(math.itemCount(["a", "a", "b"], "a"))
@@ -106,18 +91,6 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   On
   ```
   
-- `listInit()`: returns a number regrading the first instance of a item (secound argument) in a list (first argument). If no such item exists, it returns _None_.
-
-  ```py
-  print(math.listInit(["a", "b", "c", "d", "e"], "e"))
-  print(math.listInit(["a", "b", "c", "d", "e"], "a"))
-  print(math.listInit(["a", "b", "c", "d", "e"], "d"))
-  ```
-  ```
-  4
-  0
-  3
-  ```
 
 - `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such item exists, it returns _None_.
 
@@ -136,6 +109,7 @@ The oprations (`math`) class contains functions regrading oprating values and ob
   ```
   [1, 2, 3, 4, 5]
   ```
+-`map`: simalar to Snap! map
 
 ## Temporary Variables
 Temporary Variables are variables that were designed for temporary use. After their use is over, they are easily removed. All functions that uses them are from the `temp` class, which contains over 4 functions.
@@ -196,11 +170,12 @@ Temporary Variables are variables that were designed for temporary use. After th
   ```
   > Please refrain from using the temps variable differently, such as setting it as a different type. If you do this, these functions above might not work.
   > ```py
-  > temps = "abc"
+  > a=temp()
+  > a.temps = "abc"
   >
-  >temp.define("dummy", None)
+  > a.define("dummy", None)
   >
-  >print(temps)
+  > print(a.temps)
   > ```
   > ```
   > abc
@@ -212,7 +187,7 @@ The `console` class contains functions regrading the console. There is only one 
 - `menu()`: allows you to apply a multichoice input into the console, allowing the user to pick an option.
   
   ```py
-  anwser = console.menu(None, ["a", "b", "c", "d"], False)
+  answer = console.menu(None, ["a", "b", "c", "d"], False)
   ```
   ```
   0: a
