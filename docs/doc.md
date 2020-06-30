@@ -21,13 +21,13 @@ from Dython import *
 ```
 
 ## Operations
-The operations (`math`) class contains functions regrading oprating values and objects. There are currently 5 functions under this class.
+The operations (`math`) class contains functions regrading oprating values and objects. There are currently 9 functions under this class.
   
 - `itemsAdd()`&`itemsMulti()`: returns the sum or product of all items in a list (argument).
 
   ```py
-  print(math.itemsAdd([1, 2, 3]))
-  print(math.itemsMulti([5, 5, 4]))
+  print(math().itemsAdd([1, 2, 3]))
+  print(math().itemsMulti([5, 5, 4]))
   ```
   ```
   6.0
@@ -38,7 +38,7 @@ The operations (`math`) class contains functions regrading oprating values and o
 
   ```py
   name = "Davis"
-  print(math.joinStrs(["Hello, ", name, "!"]))
+  print(math().joinStrs(["Hello, ", name, "!"]))
   ```
   ```
   Hello, Davis!
@@ -47,9 +47,9 @@ The operations (`math`) class contains functions regrading oprating values and o
 - `itemCount()`: returns the amount of items in a list (first argument) that matches the secound argument.(Can be replaced by list.count)
 
   ```py
-  print(math.itemCount(["a", "a", "b"], "a"))
-  print(math.itemCount(["a", "a", "b"], "b"))
-  print(math.itemCount(["a", "a", "b"], "c"))
+  print(math().itemCount(["a", "a", "b"], "a"))
+  print(math().itemCount(["a", "a", "b"], "b"))
+  print(math().itemCount(["a", "a", "b"], "c"))
   ```
   ```
   2
@@ -60,10 +60,10 @@ The operations (`math`) class contains functions regrading oprating values and o
 - `rangeLimit()`: sets a limit to a number's (first) range with a minimum and maximum (secound and third arguments).
 
   ```py
-  print(math.rangeLimit(5, 0, 10))
-  print(math.rangeLimit(11, 0, 10))
-  print(math.rangeLimit(-3, 0, 10))
-  print(math.rangeLimit(7, 0, 10))
+  print(math().rangeLimit(5, 0, 10))
+  print(math().rangeLimit(11, 0, 10))
+  print(math().rangeLimit(-3, 0, 10))
+  print(math().rangeLimit(7, 0, 10))
   ```
   ```
   5
@@ -75,13 +75,13 @@ The operations (`math`) class contains functions regrading oprating values and o
 - `feturn()`: returns either the secound or third argument depending on a Boolean (first). If true, secound. Otherwise, third.
   
   ```py
-  print(math.feturn(False, "Yes", "No"))
-  print(math.feturn(True, "Yes", "No"))
+  print(math().feturn(False, "Yes", "No"))
+  print(math().feturn(True, "Yes", "No"))
   
   print('')
   
-  print(math.feturn(False, "On", "Off"))
-  print(math.feturn(True, "On", "Off"))
+  print(math().feturn(False, "On", "Off"))
+  print(math().feturn(True, "On", "Off"))
   ```
   ```
   No
@@ -95,7 +95,7 @@ The operations (`math`) class contains functions regrading oprating values and o
 - `listInits()`: returns a list of numbers regrading instances of items matching the secound argument in a list (first argument). If no such item exists, it returns _None_.
 
   ```py
-  print(math.listInits([4, 0, 2, 5, 0, 3, 0], 0))
+  print(math().listInits([4, 0, 2, 5, 0, 3, 0], 0))
   ```
   ```
   [1, 4, 6]
@@ -104,7 +104,7 @@ The operations (`math`) class contains functions regrading oprating values and o
 - `filterList()`: returns a list (first) without items matching the secound argument.
 
   ```py
-  print(math.filterList([0, 1, 0, 0, 2, 3, 0, 4, 5], 0))
+  print(math().filterList([0, 1, 0, 0, 2, 3, 0, 4, 5], 0))
   ```
   ```
   [1, 2, 3, 4, 5]
@@ -117,7 +117,8 @@ Temporary Variables are variables that were designed for temporary use. After th
 - `define()`: defines a temporary variable. Its name is the first argument, and its starting value is the secound argument.
 
   ```py
-  temp.define("myTemp", 0)
+  a=temp()
+  a.define("myTemp", 0)
   ```
   
   It doesn't do anything if there was already a temporary variable named as such.
@@ -125,8 +126,9 @@ Temporary Variables are variables that were designed for temporary use. After th
 - `get()`: returns the value of a temporary variable (first argument). It returns _None_ if the temporary variable doesn't exist.
 
   ```py
-  temp.define("myTemp", 25)
-  print(temp.get("myTemp"))
+  a=temp()
+  a.define("myTemp", 25)
+  print(a.get("myTemp"))
   ```
   ```
   25
@@ -135,11 +137,12 @@ Temporary Variables are variables that were designed for temporary use. After th
 - `set()`: sets the value of a temporary variable (first argument) to the secound argument.
 
   ```py
-  temp.define("myTemp", 0)
-  print(temp.get("myTemp"))
+  a=temp()
+  a.define("myTemp", 0)
+  print(a.get("myTemp"))
   
-  temp.set("myTemp", 50)
-  print(temp.get("myTemp"))
+  a.set("myTemp", 50)
+  print(a.get("myTemp"))
   ```
   ```
   0
@@ -149,7 +152,8 @@ Temporary Variables are variables that were designed for temporary use. After th
 - `remove()`: removes a temporary variable.
 
   ```py
-  remove("myTemp")
+  a=temp()
+  a.remove("myTemp")
   ```
 
 
@@ -158,12 +162,13 @@ Temporary Variables are variables that were designed for temporary use. After th
   > `[name, value]`
   
   ```py
-  temp.define("VarA", 0)
-  temp.define("VarB", "abc")
-  temp.define("VarC", True)
-  temp.define("VarD", [0, 1, 2])
+  a=temp()
+  a.define("VarA", 0)
+  a.define("VarB", "abc")
+  a.define("VarC", True)
+  a.define("VarD", [0, 1, 2])
 
-  print(temps)
+  print(a.temps)
   ```
   ```
   [['VarA', 0], ['VarB', 'abc'], ['VarC', True], ['VarD', [0, 1, 2]]]
@@ -187,7 +192,7 @@ The `console` class contains functions regrading the console. There is only one 
 - `menu()`: allows you to apply a multichoice input into the console, allowing the user to pick an option.
   
   ```py
-  answer = console.menu(None, ["a", "b", "c", "d"], False)
+  answer = console().menu(None, ["a", "b", "c", "d"], False)
   ```
   ```
   0: a
