@@ -2,48 +2,47 @@
 
 # Oprations
 class math():
-    def expon(num, root):
+    '''def expon(num, root): You can use math.pow(num,root) for this.
         ji = float(num)
         for j in range(root - 1):
             ji = float(float(ji) * float(num))
-        return ji
+        return ji'''
     def itemsAdd(var):
         num = 0
         for i in list(var):
             num += float(i)
         return num
-    def itemsSub(var):
+    '''def itemsSub(var):
         num = float(list(var)[0] * 2)
         for i in list(var):
-            num -= float(i)
-        return num
+            num -= float(i) You should not combine non-associative functions.
+        return num'''
     def itemsMulti(var):
         num = 1
         for i in list(var):
             num = float(float(num) * float(i))
         return num
-    def itemsDivd(var):
+    '''def itemsDivd(var):
         num = float(list(var)[0])
         for i in range(int(len(list(var))) - 1):
             num = float(float(num) / float(var[i + 1]))
-        return num
+        return num'''
     def joinStrs(strings):
         string = ""
         for i in list(strings):
             string += str(i)
         return str(string)
-    def itemCount(var, item):
+    '''def itemCount(var, item):
         count = 0
-        for i in list(var):
+        for i in list(var): list.count is enough.
             if i is item: count += 1
-        return int(count)
+        return int(count)'''
     def rangeLimit(num, MIN, MAX):
         if int(num) > int(MAX): return int(MAX)
         elif int(num) < int(MIN): return int(MIN)
         else: return int(num)
-    def feturn(con, true, false):
-        if bool(con): return true
-        else: return false
+    def feturn(con, true, false):#Inline if exp
+        return true if con else false
     def listInit(var, item):
         for j in range(len(list(var))):
             if list(var)[j] is item: return int(j)
@@ -58,7 +57,7 @@ class math():
         items = []
         for j in list(var):
             if not j is item: items.append(j)
-        return list(items)
+        return items
         
 # Temp Variables
 temps = []
