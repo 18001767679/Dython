@@ -43,6 +43,14 @@ def info():
     print('''Dan's Papa (Grandfather)''')
     
 
+def combine(f,l):
+    k=l[0]
+    for i in l:
+        k=f(k,i)
+    return k
+        
+
+'''Use combine to do the same
 # Oprations
 def itemsAddty(var):
     num = 0
@@ -84,27 +92,33 @@ def itemsDidty(var):
             else: num /= float(i)
         else: passer = True
     return num
-
+'''
+'''
+[].count()
 def itemCount(var, item):
     count = 0
     for i in list(var):
         if i == item: count += 1
     return int(count)
-    
+'''
 def rangeLimit(num, Min, Max):
-    NUM = float(num); MIN = float(Min); MAX = float(Max)
-    if NUM > MAX: return MAX
-    elif NUM < MIN: return MIN
-    else: return NUM
+    NUM,MIN,MAX = float(num),float(Min),float(Max)
+    if NUM > MAX: 
+        return MAX
+    elif NUM < MIN: 
+        return MIN
+    else: 
+        return NUM
         
 def feturn(con, true, false):
-    return true if bool(con) else false
-    
+    return true if con else false
+'''
+[].index()
 def listInit(var, item):
     for j in range(len(list(var))):
         if list(var)[j] == item: return int(j)
     return None
-    
+''' 
 def listInits(var, item):
     items = []
     for j in range(len(list(var))):
@@ -117,24 +131,27 @@ def filterList(var, item):
     for j in list(var):
         if j != item: items.append(j)
     return list(items)
-
+'''
+map(lambda x:var[x],indexes)
 def indexList(var, indexes):
     items = []
-    for IN in list(indexes): items.append(list(var)[int(IN)])
-    return list(items)
-
+    for IN in list(indexes): items.append(var[IN])
+    return items
+'''
+'''
+max(l)
 def findGreatest(var):
     number = 0
     for i in list(var):
         if float(i) > number: number = i
     return number
-
+min(l)
 def findSmallest(var):
     number = float(list(var)[0])
     for i in list(var):
         if float(i) < number: number = i
     return number
-
+'''
 def menu(options, noAnwser):
     if int(len(options)) == 0:
         raise ValueError(menuFunctionLow)
